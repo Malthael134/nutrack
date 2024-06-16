@@ -11,7 +11,7 @@ const { rows } = await turso.execute({
 });
 ---
 
-<WikiLayout title={`Wiki: ${nutrient}`}>
+<WikiLayout title={nutrient!}>
     {
         rows.length > 0 ? (
             <>

@@ -1,4 +1,5 @@
-export { DropdownModule } from "./Dropdown";
+import * as Dropdown from "./Dropdown"
 
-export { default as Nutrients } from "./Nutrients.astro";
+export { Dropdown };
+
 export { default as Topnav } from "./Topnav.astro";
