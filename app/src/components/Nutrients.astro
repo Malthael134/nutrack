@@ -1,0 +1,21 @@
+---
+import { turso } from "../turso";
+
+const query = `
+    SELECT nameTrans.en_us AS name, descTrans.en_us AS description
+        FROM nutrients
+        INNER JOIN translations AS nameTrans ON nameTrans.ID = nutrients.name
+        INNER JOIN translations AS descTrans ON descTrans.ID = nutrients.description;
+`;
+
+const { rows } = await turso.execute(query);
+---
+
+<div class="grid grid-cols-2 gap-2">
+    <h1 class="font-bold text-2xl">Nutrient Name</h1>
+    <h1 class="font-bold text-2xl">Nutrient Description</h1>
+    {rows.map((nutrient) => (
+        <div>{nutrient.name}</div>
+        <div>{nutrient.description}</div>
+    ))}
+</div>
