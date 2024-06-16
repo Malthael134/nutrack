@@ -5,9 +5,12 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: node({
-    mode: "standalone"
-  }),
-  integrations: [tailwind(), react()]
+    output: "server",
+    adapter: node({
+        mode: "standalone"
+    }),
+    security: {
+        checkOrigin: true,
+    },
+    integrations: [tailwind(), react()]
 });

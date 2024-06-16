@@ -1,0 +1,25 @@
+---
+import { WikiLayout } from "@/layouts";
+import { turso } from "@/turso";
+
+const { nutrient } = Astro.params;
+
+const query = `SELECT * FROM nutrients WHERE id = ?`;
+const { rows } = await turso.execute({
+    sql: query,
+    args: [nutrient!],
+});
+---
+
+<WikiLayout title={`Wiki: ${nutrient}`}>
+    {
+        rows.length > 0 ? (
+            <>
+                <h1>{rows[0].name}</h1>
+                <span />
+            </>
+        ) : (
+            <p>Element not found</p>
+        )
+    }
+</WikiLayout>

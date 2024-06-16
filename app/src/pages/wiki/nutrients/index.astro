@@ -1,11 +1,12 @@
 ---
 
 import { Nutrients } from "@/components"
+import { MainLayout } from "@/layouts"
 
 console.log(import.meta.env.TURSO_DATABASE_URL)
 ---
 
-<div>
+<MainLayout title="Nutrients">
     <h1 class="text-2xl">Nutrients...</h1>
     <Nutrients />
-</div>
+</MainLayout>
