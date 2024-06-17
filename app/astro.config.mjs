@@ -11,6 +11,9 @@ export default defineConfig({
     security: {
         checkOrigin: true
     },
+    vite: {
+
+    },
     integrations: [tailwind(), react()],
     experimental: {
         actions: true
