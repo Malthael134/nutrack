@@ -1,5 +1,5 @@
 ---
-import { Dropdown } from "@/components"
+import WikiDropdown from "@/components/WikiDropdown";
 
 const currentURL = new URL(Astro.request.url);
 const isWikiOrSub =
@@ -11,7 +11,8 @@ const isWikiOrSub =
     <a href="/">
         <span class="text-2xl">NuTrack</span>
     </a>
-    <a href="/wiki">
-        <span class={`hover:underline ${isWikiOrSub ? "": ""}`}>Wiki</span>
-    </a>
+    <span>
+        <WikiDropdown client:load />
+        <!-- <span class={`hover:underline ${isWikiOrSub ? "" : ""}`}>Wiki</span> -->
+    </span>
 </div>

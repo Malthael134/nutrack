@@ -15,19 +15,26 @@ export function Dropdown({ rows, title, onOpenChange }: DropdownProps) {
     const [open, setOpen] = React.useState(false);
 
     function handleOpen() {
-        setOpen(!open)
+        setOpen(true)
+        if (onOpenChange) {
+            onOpenChange(open)
+        }
+    }
+
+    function handleClose() {
+        setOpen(false)
         if (onOpenChange) {
             onOpenChange(open)
         }
     }
 
     return (
-        <div className="w-full">
-            <button className="w-full h-4" onMouseOver={handleOpen}>{title}</button>
-            <div className="flex flex-col w-full">
-                {rows.map(v => (
-                    <div className="bg-transparent hover:bg-primary-950 opacity-20">
-                        {v}
+        <div className="w-full" onMouseEnter={handleOpen} onMouseLeave={handleClose} >
+            <button className="w-full h-4" >{title}</button>
+            <div className={`flex flex-col w-full ${!open ? "hidden" : "visible"}`}>
+                {rows.map((element, index) => (
+                    <div key={index} className="bg-transparent hover:bg-primary-950 opacity-20">
+                        {element}
                     </div>
                 ))}
             </div>
