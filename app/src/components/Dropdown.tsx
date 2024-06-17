@@ -3,13 +3,22 @@ import * as React from "react"
 export interface DropdownProps {
     title: string,
     rows: React.ReactNode[],
+    /**
+     * Gets called when the dropdown opens or closes with the current state.
+     * @param {boolean} isOpen `true` means it is now open.
+     * @returns {void} Function must not return a value
+     */
+    onOpenChange?: (isOpen: boolean) => void;
 }
 
-export function Dropdown({ rows, title }: DropdownProps) {
+export function Dropdown({ rows, title, onOpenChange }: DropdownProps) {
     const [open, setOpen] = React.useState(false);
 
     function handleOpen() {
         setOpen(!open)
+        if (onOpenChange) {
+            onOpenChange(open)
+        }
     }
 
     return (

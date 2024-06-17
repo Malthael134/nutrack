@@ -12,5 +12,8 @@ export default defineConfig({
     security: {
         checkOrigin: true,
     },
-    integrations: [tailwind(), react()]
+    integrations: [tailwind(), react()],
+    experimental: {
+        actions: true,
+    },
 });

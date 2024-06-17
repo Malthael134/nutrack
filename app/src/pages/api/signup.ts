@@ -40,7 +40,7 @@ export const POST: APIRoute = async ({ request }) => {
             sql: `INSERT INTO users (id, username, email, password_hash) VALUES (?, ?, ?, ?)`,
             args: [userId, username, email, passwordHash]
         });
-        
+
         // await db.table("user").insert({
         //     id: userId,
         //     email,
