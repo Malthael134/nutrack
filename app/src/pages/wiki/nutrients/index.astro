@@ -1,0 +1,41 @@
+---
+import { WikiLayout } from "@/layouts";
+import { turso } from "@/turso";
+
+const query = `
+    SELECT * FROM nutrients;
+`;
+type Item = {
+    id: number;
+    name: string;
+    description: string;
+};
+
+const { rows } = await turso.execute(query);
+
+let items: Item[] = [];
+
+rows.forEach((e) => {
+    items.push({
+        id: e["id"] as number,
+        name: e["name"] as string,
+        description: e["description"] as string,
+    });
+});
+---
+
+<WikiLayout title="Nutrients">
+    <h1 class="text-2xl">Nutrients...</h1>
+    <div class="grid grid-cols-2 gap-2">
+        <h1 class="font-bold text-2xl">Nutrient Name</h1>
+        <h1 class="font-bold text-2xl">Nutrient Description</h1>
+        {
+            items.map((item: any) => (
+                <a href={`/wiki/nutrients/${item.id}`} class="hover:bg-gray-100 hover:underline">
+                    <div>{item.name}</div>
+                    <div>{item.description}</div>
+                </a>
+            ))
+        }
+    </div>
+</WikiLayout>
