@@ -1,1 +1,5 @@
+data
 temp
+
+# env files
+.env*
