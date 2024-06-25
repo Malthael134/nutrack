@@ -7,7 +7,7 @@ export default async function Home() {
     }
 
     return (
-        <main className="px-6 py-4">
+        <main className="h-full w-full bg-inherit px-6 py-4">
             <Users />
         </main>
     );
