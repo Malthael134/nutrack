@@ -10,8 +10,8 @@ export default {
             },
             colors: {
                 primary: {
-                    // Blending from  rgb(200, 180, 220) or #C8B4DC
-                    //            to  rgb( 70,   0, 120) or #460078 using
+                    // Blending from  rgb(180, 160, 200) or #B4A0C8
+                    //            to  rgb( 30,   0,  80) or #1E0050 using
                     // https://colorkit.io | https://colorkit.io/#b4a0c8-#1e0050-11
                     50: "#B4A0C8",
                     100: "#A590BC",
