@@ -1,5 +1,5 @@
 "use server";
-import Counter from "@/components/Counter";
+import Users from "@/components/Users";
 
 export default async function Home() {
     async function getUsers(): Promise<string[]> {
@@ -7,8 +7,8 @@ export default async function Home() {
     }
 
     return (
-        <main>
-            <Counter />
+        <main className="px-6 py-4">
+            <Users />
         </main>
     );
 }

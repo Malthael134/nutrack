@@ -18,7 +18,7 @@ import {
  */
 export const createTable = pgTableCreator((name) => `nutrack_${name}`);
 
-export const posts = createTable("user", {
+export const users = createTable("user", {
     id: serial("id").primaryKey().notNull(),
     name: varchar("name", { length: 256 }),
     joinedAt: timestamp("joined_at", { withTimezone: true })

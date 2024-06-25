@@ -1,7 +1,5 @@
 import "@/styles/globals.css";
-
 import { GeistSans } from "geist/font/sans";
-
 import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata = {
@@ -17,7 +15,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={`${GeistSans.variable}`}>
-            <body>
+            <body className="min-h-screen bg-gradient-to-br from-primary-600 to-primary-950">
                 <TRPCReactProvider>{children}</TRPCReactProvider>
             </body>
         </html>
