@@ -12,8 +12,7 @@ export default {
                 primary: {
                     // Blending from  rgb(200, 180, 220) or #C8B4DC
                     //            to  rgb( 70,   0, 120) or #460078 using
-                    // https://colorkit.io | https://colorkit.io/#c8b4dc-#460078-11
-
+                    // https://colorkit.io | https://colorkit.io/#c8b4dc-#14003c-11
                     50: "#C8B4DC",
                     100: "#BBA2D2",
                     200: "#AE90C8",
