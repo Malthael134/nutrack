@@ -1,10 +1,14 @@
-import { api } from "@/trpc/server";
+"use server";
+import Counter from "@/components/Counter";
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
+    async function getUsers(): Promise<string[]> {
+        return [];
+    }
 
-  return (
-    <main>
-    </main>
-  );
+    return (
+        <main>
+            <Counter />
+        </main>
+    );
 }
