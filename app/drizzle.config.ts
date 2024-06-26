@@ -1,12 +1,17 @@
-import { type Config } from "drizzle-kit";
+import { defineConfig } from "drizzle-kit";
+import dotenv from "dotenv"
 
-import { env } from "@/env";
+// Load environment variables into process.env
+dotenv.config({ path: '../.env' })
 
-export default {
-    schema: "./src/server/db/schema.ts",
+console.log('DATABASE_URL =', process.env.DATABASE_URL)
+
+export default defineConfig({
+    schema: "./server/database/schema.ts",
     dialect: "postgresql",
+    out: "./server/database/migrations",
     dbCredentials: {
-        url: env.DATABASE_URL,
+        url: process.env.DATABASE_URL ?? "",
     },
     tablesFilter: ["nutrack_*"],
-} satisfies Config;
+});

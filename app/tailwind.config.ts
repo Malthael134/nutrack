@@ -1,13 +1,9 @@
-import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
+import type { Config } from "tailwindcss";
 
 export default {
-    content: ["./src/**/*.tsx"],
+    content: ["./**/*.vue"],
     theme: {
         extend: {
-            fontFamily: {
-                sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-            },
             colors: {
                 primary: {
                     // Blending from  rgb(180, 160, 200) or #B4A0C8
