@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@types/cookie':
+        specifier: ^0.6.0
+        version: 0.6.0
+      cookie:
+        specifier: ^0.6.0
+        version: 0.6.0
       drizzle-orm:
         specifier: ^0.31.2
         version: 0.31.2(postgres@3.4.4)
