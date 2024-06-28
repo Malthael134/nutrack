@@ -1,6 +1,6 @@
 import type { Handle } from '@sveltejs/kit';
 import { parse } from 'cookie';
-// https://discord.com/channels/457912077277855764/1082687768930570340 svelte theme render ssr
+
 export const handle: Handle = async ({ event, resolve }) => {
     const cookies = parse(event.request.headers.get('cookie') || '');
     const colorScheme = cookies['prefers-color-scheme'];

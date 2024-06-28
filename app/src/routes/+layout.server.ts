@@ -1,4 +1,4 @@
-import { browser } from '$app/environment';
+// this is basically unused. gotta remove it soon
 
 export const ssr = true;
 

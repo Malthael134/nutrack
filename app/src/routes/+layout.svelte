@@ -1,9 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { serialize } from 'cookie';
-	import type { LayoutServerData } from './$types';
 	import { onMount } from 'svelte';
-	export let data: LayoutServerData;
 
 	/** Client only */
 	function prefersDarkMode(): boolean {
