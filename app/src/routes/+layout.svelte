@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import '../app.css';
 	import { serialize } from 'cookie';
 	import type { LayoutServerData } from './$types';
+	import { onMount } from 'svelte';
 	export let data: LayoutServerData;
 
 	/** Client only */
@@ -10,30 +10,19 @@
 		return window.matchMedia(`(prefers-color-scheme: dark)`).matches;
 	}
 
-	function updateThemeClass() {
-		if (data.colorScheme === 'dark') {
-			document.documentElement.classList.add('dark');
-			return
-		}
-	}
-
-	updateThemeClass()
-
 	onMount(() => {
-		updateThemeClass()
-		// old way: FOUC (https://en.wikipedia.org/wiki/Flash_of_unstyled_content) problem occurs.
-		// Need to use cookies to be able to ssr that shit instead of update on client after initial page load
-		// SUCKS
-		// if (
-		// 	document.cookie === 'dark' ||
-		// 	(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-		// ) {
-		// 	console.log('using theme: dark');
-		// 	document.documentElement.classList.add('dark');
-		// } else {
-		// 	console.log('using theme: light');
-		// 	document.documentElement.classList.remove('dark');
-		// }
+		if (prefersDarkMode() && !document.cookie.includes('prefers-color-scheme=')) {
+			document.documentElement.classList.add('dark')
+		}
+		let cookies: Record<string, string> = {
+			prefersColorScheme: serialize('prefers-color-scheme', prefersDarkMode() ? 'dark' : 'light', {
+				path: '/'
+			})
+		};
+		for (const c in cookies) {
+			// console.log(cookies[c]);
+		}
+		document.cookie = cookies.prefersColorScheme;
 	});
 </script>
 
