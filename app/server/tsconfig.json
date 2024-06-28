@@ -1,4 +1,0 @@
-{
-    "extends": "../.nuxt/tsconfig.server.json",
-    "exclude": ["../prettier.config.js"],
-}
