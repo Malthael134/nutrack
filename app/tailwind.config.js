@@ -6,15 +6,17 @@ export default {
 	darkMode: [
 		'variant',
 		[
-			// IF prefers == 'dark' && config != 'light':
-			//     USE(theme.dark)
-			'@media (prefers-color-scheme: dark) { &:not(.light *) }',
+			// IF config == 'light':
+			//     USE(theme.light)
 			// ELIF config == 'dark':
 			//     USE(theme.dark)
-			'&:is(.dark *)'
+			'&:is(.dark *)',
+			// ELIF prefers == 'dark' && config != 'light':
+			//     USE(theme.dark)
+			'@media (prefers-color-scheme: dark) { &:not(.light *) }'
+			// If the config is not specified and the user does not prefer 'dark' -> user prefers light
 			// ELSE:
 			//     USE(theme.light)
-			// ...
 		]
 	],
 	theme: {
