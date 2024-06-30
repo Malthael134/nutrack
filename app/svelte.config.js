@@ -17,8 +17,8 @@ const config = {
 			directives: {
 				'script-src': ['self'],
 				'report-to': ['/api/xss-alerts']
-			},
-		},
+			}
+		}
 	}
 };
 

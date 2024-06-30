@@ -2,20 +2,21 @@
 	import '../app.css';
 	import { serialize } from 'cookie';
 	import { onMount } from 'svelte';
+	import UserSettingsStore from '$lib/stores/settings';
+	export let data: import('./$types').LayoutServerData;
+	const { colorScheme } = data;
 
-	/** Client only */
-	function prefersDarkMode(): boolean {
-		return window.matchMedia(`(prefers-color-scheme: dark)`).matches;
-	}
+	UserSettingsStore.update((settings) => ({ ...settings, colorScheme }));
 
 	onMount(() => {
-		if (prefersDarkMode() && !document.cookie.includes('prefers-color-scheme=')) {
-			document.documentElement.classList.add('dark');
+		if (!document.cookie.includes('prefers-color-scheme=')) {
+			document.cookie = serialize('prefers-color-scheme', 'system', {
+				path: '/'
+			});
 		}
-		document.cookie = serialize('prefers-color-scheme', prefersDarkMode() ? 'dark' : 'light', {
-			path: '/'
-		});
 	});
 </script>
 
-<slot />
+<span id="page-wrapper" class={$UserSettingsStore.colorScheme}>
+	<slot />
+</span>
