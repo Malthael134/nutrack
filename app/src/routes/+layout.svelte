@@ -10,17 +10,11 @@
 
 	onMount(() => {
 		if (prefersDarkMode() && !document.cookie.includes('prefers-color-scheme=')) {
-			document.documentElement.classList.add('dark')
+			document.documentElement.classList.add('dark');
 		}
-		let cookies: Record<string, string> = {
-			prefersColorScheme: serialize('prefers-color-scheme', prefersDarkMode() ? 'dark' : 'light', {
-				path: '/'
-			})
-		};
-		for (const c in cookies) {
-			// console.log(cookies[c]);
-		}
-		document.cookie = cookies.prefersColorScheme;
+		document.cookie = serialize('prefers-color-scheme', prefersDarkMode() ? 'dark' : 'light', {
+			path: '/'
+		});
 	});
 </script>
 
