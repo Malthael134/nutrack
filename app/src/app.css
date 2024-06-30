@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer utilities {
-	.scrollbar-stable {
-		scrollbar-gutter: stable;
-	}
+    .scrollbar-stable {
+        scrollbar-gutter: stable;
+    }
 
-	.scrollbar-stable-both {
-		scrollbar-gutter: stable both-edges;
-	}
+    .scrollbar-stable-both {
+        scrollbar-gutter: stable both-edges;
+    }
 }
