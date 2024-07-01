@@ -6,11 +6,6 @@
     "emmet.includeLanguages": {
         "*.svelte": "html"
     },
-    "tailwindCSS.classAttributes": [
-        "class",
-        "className",
-        "*Styles"
-    ],
     "sqltools.connections": [
         {
             "previewLimit": 50,

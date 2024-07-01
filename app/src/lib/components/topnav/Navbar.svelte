@@ -1,6 +1,6 @@
 <script>
     import { Logo } from '$lib/components';
-    import { DarkModeIcon, LightModeIcon } from '$lib/icons';
+    import { DarkModeIcon, LightModeIcon, SystemModeIcon } from '$lib/icons';
     import { default as UserSettingsStore } from '$lib/stores/settings';
 </script>
 
@@ -11,12 +11,14 @@
     <a class="cursor-pointer" href="/">
         <Logo />
     </a>
+
     <!-- Middle of row -->
     <div
         class="flex grow flex-row items-center justify-end gap-4 overflow-x-auto overflow-y-hidden"
     >
         <slot />
     </div>
+
     <!-- End of row -->
     <div class="flex gap-2">
         <button
@@ -34,7 +36,7 @@
             }}
             class={`${$UserSettingsStore.colorScheme === 'light' ? 'bg-green-700' : 'bg-gray-400'} p-4`}
         >
-            <LightModeIcon className="stroke-gray-600" />
+            <LightModeIcon />
         </button>
 
         <button
@@ -43,7 +45,7 @@
             }}
             class={`${$UserSettingsStore.colorScheme === 'system' ? 'bg-green-700' : 'bg-gray-400'} p-4`}
         >
-            System
+            <SystemModeIcon />
         </button>
     </div>
 </nav>

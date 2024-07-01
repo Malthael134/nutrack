@@ -1,21 +1,20 @@
 <script lang="ts">
-
+    import UserSettingsStore from '$lib/stores/settings';
 </script>
 
 <div>
     <svg
-        width="20px"
-        height="20px"
-        viewBox="0 0 24 24"
-        fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class={`aspect-square size-full ${$UserSettingsStore.colorScheme === 'dark' ? 'stroke-sky-400' : 'stroke-gray-500'}`}
     >
         <path
-            d="M13 6V3M18.5 12V7M14.5 4.5H11.5M21 9.5H16M15.5548 16.8151C16.7829 16.8151 17.9493 16.5506 19 16.0754C17.6867 18.9794 14.7642 21 11.3698 21C6.74731 21 3 17.2527 3 12.6302C3 9.23576 5.02061 6.31331 7.92462 5C7.44944 6.05072 7.18492 7.21708 7.18492 8.44523C7.18492 13.0678 10.9322 16.8151 15.5548 16.8151Z"
-            stroke="#000000"
-            stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
+            d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
         />
     </svg>
 </div>
