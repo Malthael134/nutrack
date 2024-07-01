@@ -1,2 +1,2 @@
 export { default as Navbar } from './Navbar.svelte';
-export { default as Navitem } from './Navitem.svelte';
+export { default as Navlink } from './Navlink.svelte';

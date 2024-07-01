@@ -1,13 +1,16 @@
 {
     "advancedNewFile.exclude": {
-        "app/data": true,
         "**/node_modules/": true,
-        "**/target/": true,
+        "/app/build/": true
     },
     "emmet.includeLanguages": {
-        "rust": "html",
-        "*.rs": "html"
+        "*.svelte": "html"
     },
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "*Styles"
+    ],
     "sqltools.connections": [
         {
             "previewLimit": 50,
@@ -19,5 +22,6 @@
             "password": "password",
             "name": "Nutrack Main DB Connection"
         }
-    ]
+    ],
+    "svg.preview.background": "custom"
 }

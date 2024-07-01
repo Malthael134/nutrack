@@ -24,5 +24,5 @@ export default {
             colors: {}
         }
     },
-    plugins: [require('@tailwindcss/container-queries')]
+    plugins: ['prettier-plugin-tailwindcss', require('@tailwindcss/container-queries')]
 };
