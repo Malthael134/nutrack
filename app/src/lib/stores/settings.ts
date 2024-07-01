@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 const userSettings = writable<UserSettings>({
-    colorScheme: 'system'
+    colorScheme: 'system',
 });
 
 export default userSettings;

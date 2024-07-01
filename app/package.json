@@ -8,9 +8,11 @@
         "preview": "vite preview",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+        "db:push": "drizzle-kit push",
+        "db:generate": "drizzle-kit generate",
         "test": "vitest",
         "lint": "prettier --check . && eslint .",
-        "format": "prettier --write ."
+        "format": "prettier --write . \"!data\""
     },
     "devDependencies": {
         "@sveltejs/adapter-node": "^5.2.0",
@@ -18,7 +20,9 @@
         "@sveltejs/vite-plugin-svelte": "^3.0.0",
         "@tailwindcss/container-queries": "^0.1.1",
         "@types/eslint": "^8.56.7",
+        "@types/node": "^20.14.9",
         "autoprefixer": "^10.4.19",
+        "dotenv": "^16.4.5",
         "drizzle-kit": "^0.22.7",
         "eslint": "^9.0.0",
         "eslint-config-prettier": "^9.1.0",

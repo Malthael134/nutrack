@@ -1,15 +1,15 @@
-version: "3.8"
+version: '3.8'
 
 services:
     db:
         image: postgres
         restart: always
         env_file:
-            - ".env"
+            - '.env'
         volumes:
             - ./data:/var/lib/postgresql/data:rw
         ports:
-            - "${DATABASE_PORT}:5432"
+            - '${DATABASE_PORT}:5432'
     adminer:
         image: adminer
         restart: always

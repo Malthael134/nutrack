@@ -4,7 +4,7 @@
     import { onMount } from 'svelte';
     import {
         default as UserSettingsStore,
-        type UserSettings as UserSettings
+        type UserSettings as UserSettings,
     } from '$lib/stores/settings';
     import { browser } from '$app/environment';
     export let data: import('./$types').LayoutServerData;
@@ -15,7 +15,7 @@
         if (browser) {
             console.log('user settings store updated to:', v);
             document.cookie = serialize('prefers-color-scheme', v.colorScheme, {
-                path: '/'
+                path: '/',
             });
         }
     });
@@ -23,12 +23,12 @@
     onMount(() => {
         if (!document.cookie.includes('prefers-color-scheme=')) {
             document.cookie = serialize('prefers-color-scheme', 'system', {
-                path: '/'
+                path: '/',
             });
         }
     });
 </script>
 
-<span id="page-wrapper" class={$UserSettingsStore.colorScheme}>
+<span id="page-wrapper" class="{$UserSettingsStore.colorScheme} font-sans">
     <slot />
 </span>

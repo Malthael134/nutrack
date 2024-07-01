@@ -16,10 +16,10 @@ const config = {
         csp: {
             directives: {
                 'script-src': ['self'],
-                'report-to': ['/api/xss-alerts']
-            }
-        }
-    }
+                'report-to': ['/api/xss-alerts'],
+            },
+        },
+    },
 };
 
 export default config;

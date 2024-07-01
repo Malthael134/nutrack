@@ -21,6 +21,6 @@ export async function load({ cookies, request }) {
     }
 
     return {
-        colorScheme: colorScheme
+        colorScheme: colorScheme,
     };
 }
