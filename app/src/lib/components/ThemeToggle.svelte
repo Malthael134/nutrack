@@ -23,7 +23,7 @@
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            class="size-7 stroke-sky-800 dark:stroke-gray-400"
+            class="size-7 stroke-gray-800 dark:stroke-gray-400"
         >
             <path
                 stroke-linecap="round"
@@ -39,7 +39,7 @@
             viewBox="0 0 24 24"
             stroke-width="2"
             stroke="currentColor"
-            class="size-7 stroke-sky-800 dark:stroke-gray-400"
+            class="size-7 stroke-gray-800 dark:stroke-gray-400"
         >
             <path
                 stroke-linecap="round"
@@ -54,7 +54,7 @@
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            class="size-7 stroke-sky-800 dark:stroke-gray-400"
+            class="size-7 stroke-gray-800 dark:stroke-gray-400"
         >
             <path
                 stroke-linecap="round"

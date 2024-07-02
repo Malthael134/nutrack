@@ -77,7 +77,7 @@ docker compose -f compose.dev.yaml up -d
 pnpm install
 ```
 
-### Set up the database schema
+### Push up the database schema to the database
 
 ```sh
 # in /app
