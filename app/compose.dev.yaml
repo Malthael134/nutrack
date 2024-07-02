@@ -7,7 +7,7 @@ services:
         env_file:
             - '.env'
         volumes:
-            - ./data:/var/lib/postgresql/data:rw
+            - ../data:/var/lib/postgresql/data:rw
         ports:
             - '${DATABASE_PORT}:5432'
     adminer:

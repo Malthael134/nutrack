@@ -1,10 +1,11 @@
 import { defineConfig } from 'drizzle-kit';
 
 export default defineConfig({
-    schema: './src/lib/db/schema.ts',
+    schema: './src/lib/server/db/schema.ts',
     dialect: 'postgresql',
     out: './migrations',
     dbCredentials: {
+        // @ts-ignore
         url: process.env.DATABASE_URL ?? '',
     },
     // Mutli-App DB configuration

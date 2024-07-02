@@ -14,6 +14,17 @@
         "lint": "prettier --check . && eslint .",
         "format": "prettier --write . \"!data\""
     },
+    "dependencies": {
+        "@auth/core": "^0.34.1",
+        "@auth/drizzle-adapter": "^1.4.1",
+        "@auth/sveltekit": "^1.4.1",
+        "@types/cookie": "^0.6.0",
+        "cookie": "^0.6.0",
+        "dotenv": "^16.4.5",
+        "drizzle-orm": "^0.31.2",
+        "postgres": "^3.4.4",
+        "zod": "^3.23.8"
+    },
     "devDependencies": {
         "@sveltejs/adapter-node": "^5.2.0",
         "@sveltejs/kit": "^2.0.0",
@@ -41,16 +52,5 @@
         "vitest": "^1.2.0"
     },
     "type": "module",
-    "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
-    "dependencies": {
-        "@lucia-auth/adapter-drizzle": "^1.0.7",
-        "@types/cookie": "^0.6.0",
-        "arctic": "^1.9.1",
-        "cookie": "^0.6.0",
-        "dotenv": "^16.4.5",
-        "drizzle-orm": "^0.31.2",
-        "lucia": "^3.2.0",
-        "postgres": "^3.4.4",
-        "zod": "^3.23.8"
-    }
+    "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74"
 }

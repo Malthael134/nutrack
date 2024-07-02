@@ -37,6 +37,16 @@ The fastest way to get started is by running:
 cp .env.example .env
 ```
 
+### Auth Configuration
+
+#### Generate the next-auth secret
+
+```sh
+pnpx auth secret
+```
+
+Copy the value into [/app/.env](/app/.env) and use it as the value of `AUTH_SECRET`.
+
 #### Obtaining the GitHub OAuth App Secrets
 
 Go to [https://github.com/settings/developers](https://github.com/settings/developers) and create a new applications with the values:
@@ -45,9 +55,9 @@ Go to [https://github.com/settings/developers](https://github.com/settings/devel
 - **Homepage URL:** [`http://localhost:3000`](http://localhost:3000)
 - **Authorization callback URL:** [`http://localhost:3000/auth/callback/github`](http://localhost:3000/auth/callback/github)
 
-Next, copy the `Client ID` value into the [`.env`](./app/.env) file as the value of `GITHUB_CLIENT_ID`.
+Next, copy the `Client ID` value into the [`.env`](./app/.env) file as the value of `AUTH_GITHUB_ID`.
 
-Lastly, also generate a `Client Secret` and paste it in as the value of `GITHUB_CLIENT_SECRET`.
+Lastly, also generate a `Client Secret` and paste it in as the value of `AUTH_GITHUB_SECRET`.
 
 ### Starting the Database
 
