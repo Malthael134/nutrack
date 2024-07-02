@@ -10,13 +10,15 @@ This is mainly for my personal need. Here's what I wanted to make, and also why:
 
 ## Development
 
-How to develop/run this thing locally.
-
 ### Dev Tools
 
 - **PNPM**
     The JavaScript package manager used in this project.
     [https://pnpm.io](https://pnpm.io)
+
+- **NodeJS**
+    The JavaScript runtime environment version `LTS 20.XX` _or newer_.
+    [https://nodejs.org/en](https://nodejs.org/en)
 
 - **Docker**:
     Docker is used to run the PostgreSQL DB locally together with Adminer as a Database GUI.
@@ -25,27 +27,49 @@ How to develop/run this thing locally.
 
 ### Configuring environment variables
 
-For testing purposes it will suffice to just copy the example ENV-file ([.env.example](.env.example)).
+#### Creating the initial .env file
 
-The fastest way to get this done is by running:
+The fastest way to get started is by running:
 
 ```sh
+# in /app
 # copy '.env.example' into '.env'
 cp .env.example .env
 ```
+
+#### Obtaining the GitHub OAuth App Secrets
+
+Go to [https://github.com/settings/developers](https://github.com/settings/developers) and create a new applications with the values:
+
+- **Applications name:** _`whateveryouwant.txt`_
+- **Homepage URL:** [`http://localhost:3000`](http://localhost:3000)
+- **Authorization callback URL:** [`http://localhost:3000/auth/callback/github`](http://localhost:3000/auth/callback/github)
+
+Next, copy the `Client ID` value into the [`.env`](./app/.env) file as the value of `GITHUB_CLIENT_ID`.
+
+Lastly, also generate a `Client Secret` and paste it in as the value of `GITHUB_CLIENT_SECRET`.
 
 ### Starting the Database
 
 You can start the database using Docker, but also use any other way to run Postgres. Just make sure it either runs on `localhost:5432` or you change the respective environment variables (`DATABASE_HOST` and `DATABASE_PORT`) in the [**.env**](.env) file.
 
+In the [`/app`](/app) directory, run
+
 ```sh
+# in /app run:
 docker compose -f compose.dev.yaml up -d
+```
+
+### Installing node_modules
+
+```sh
+# in /app
+pnpm install
 ```
 
 ### Set up the database schema
 
---- this is WIP, will be done using DrizzleORM hopefully
-
-### Installing node_modules
-
-In the [`/app`](/app) directory, run
+```sh
+# in /app
+pnpm db:push
+```

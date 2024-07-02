@@ -22,7 +22,6 @@
         "@types/eslint": "^8.56.7",
         "@types/node": "^20.14.9",
         "autoprefixer": "^10.4.19",
-        "dotenv": "^16.4.5",
         "drizzle-kit": "^0.22.7",
         "eslint": "^9.0.0",
         "eslint-config-prettier": "^9.1.0",
@@ -44,9 +43,13 @@
     "type": "module",
     "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
     "dependencies": {
+        "@lucia-auth/adapter-drizzle": "^1.0.7",
         "@types/cookie": "^0.6.0",
+        "arctic": "^1.9.1",
         "cookie": "^0.6.0",
+        "dotenv": "^16.4.5",
         "drizzle-orm": "^0.31.2",
+        "lucia": "^3.2.0",
         "postgres": "^3.4.4",
         "zod": "^3.23.8"
     }
