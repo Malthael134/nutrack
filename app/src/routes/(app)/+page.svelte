@@ -1,11 +1,25 @@
-<script>
+<script lang="ts">
+    import { browser } from '$app/environment';
+    import type { ActionData } from './$types.js';
 
-    import { page } from "$app/stores";
+    // export let data;
 
+    export let form;
+
+    $: validateFormResponse(form);
+
+    function validateFormResponse(form: ActionData) {
+        if (!form || !browser) return;
+        if (!form.success) {
+            alert(form.reason);
+        }
+    }
 </script>
-{#if $page.data.session}
 
-Welcome back, {$page.data.session?.user?.name}!
-{:else}
-Welcome!
-{/if}
+<form method="post" action="?/add_intake" class="grid grid-cols-3 gap-4 p-4 bg-slate-300 rounded-xl">
+    <label class="col-span-1" for="title">What did you eat?</label>
+    <input class="col-span-2" type="text" name="title" />
+    <label class="col-span-1" for="amount">How much did you eat?</label>
+    <input class="col-span-2" type="number" name="amount" />
+    <button class="col-span-3" type="submit">Add intake</button>
+</form>

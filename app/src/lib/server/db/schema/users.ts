@@ -1,5 +1,7 @@
-import { text, timestamp } from "drizzle-orm/pg-core";
-import { createTable } from "./helpers";
+import { pgEnum, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import { createTable } from './helpers';
+
+export const colorScheme = pgEnum('user_color_scheme', ['system', 'light', 'dark']);
 
 export const users = createTable('user', {
     id: text('id')
@@ -7,6 +9,7 @@ export const users = createTable('user', {
         .$defaultFn(() => crypto.randomUUID()),
     name: text('name'),
     email: text('email').notNull(),
-    emailVerified: timestamp('emailVerified', { mode: 'date' }),
+    emailVerified: timestamp('email_verified', { mode: 'date' }),
     image: text('image'),
+    colorScheme: colorScheme('color_scheme').notNull().default('system'),
 });

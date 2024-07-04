@@ -11,5 +11,19 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
         authenticatorsTable: authenticators,
         sessionsTable: sessions,
     }),
-    providers: [GitHub({ clientId: AUTH_GITHUB_ID, clientSecret: AUTH_GITHUB_SECRET })],
+    providers: [
+        GitHub({
+            clientId: AUTH_GITHUB_ID,
+            clientSecret: AUTH_GITHUB_SECRET,
+        }),
+    ],
+    callbacks: {
+        session: async ({ session, user }) => {
+            session.user.id = user.id;
+            return session;
+        },
+    },
+    session: {
+        strategy: 'database',
+    },
 });

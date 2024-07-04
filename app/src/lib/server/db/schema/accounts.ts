@@ -1,17 +1,17 @@
-import { integer, primaryKey, text } from "drizzle-orm/pg-core";
-import { createTable } from "./helpers";
-import { users } from "./users";
-import type { AdapterAccountType } from "@auth/core/adapters";
+import { integer, primaryKey, text } from 'drizzle-orm/pg-core';
+import { createTable } from './helpers';
+import { users } from './users';
+import type { AdapterAccountType } from '@auth/core/adapters';
 
 export const accounts = createTable(
     'account',
     {
-        userId: text('userId')
+        userId: text('user_id')
             .notNull()
             .references(() => users.id, { onDelete: 'cascade' }),
         type: text('type').$type<AdapterAccountType>().notNull(),
         provider: text('provider').notNull(),
-        providerAccountId: text('providerAccountId').notNull(),
+        providerAccountId: text('provider_account_id').notNull(),
         refresh_token: text('refresh_token'),
         access_token: text('access_token'),
         expires_at: integer('expires_at'),

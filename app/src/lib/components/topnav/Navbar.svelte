@@ -5,7 +5,7 @@
 </script>
 
 <nav
-    class="flex h-[60px] flex-row items-center gap-4 overflow-x-auto scroll-smooth border-b border-solid p-4 dark:border-slate-300/10 dark:bg-slate-900/75 shadow-lg"
+    class="flex h-[60px] flex-row items-center gap-4 overflow-x-auto scroll-smooth border-b border-solid p-4 shadow-lg dark:border-slate-300/10 dark:bg-slate-900/75"
 >
     <!-- Start of row -->
     <a class="cursor-pointer" href="/">
@@ -20,9 +20,7 @@
     </div>
 
     <!-- End of row -->
-    <div
-        class="flex flex-row gap-2 overflow-y-visible border-l px-2 dark:border-slate-300/10"
-    >
+    <div class="flex flex-row gap-2 overflow-y-visible border-l px-2 dark:border-slate-300/10">
         <ThemeToggle />
         {#if !$page.data.session}
             <button on:click={() => signIn()}>

@@ -1,14 +1,19 @@
-import { signIn } from '@/auth.js'
-import type { Session } from '@auth/sveltekit'
-import { redirect } from '@sveltejs/kit'
+import { db } from '@/lib/server/db/index.js';
+import { redirect } from '@sveltejs/kit';
 
 /** @type {import('./$types.js').PageServerLoad} */
 export async function load(event) {
-    const session = await event.locals.auth()
+    const session = await event.locals.auth();
 
     if (!session) {
-        redirect(302, '/auth/signin')
+        redirect(302, '/auth/signin');
     }
 
-    return
+    const user = await db.query.users.findFirst({
+        where: (users, { eq }) => eq(users.id, session.user?.id ?? ''),
+    });
+
+    return {
+        user,
+    };
 }

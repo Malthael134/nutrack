@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Navbar, Navlink } from '$lib/components/topnav';
+    import { Navbar } from '$lib/components/topnav';
 </script>
 
 <div
