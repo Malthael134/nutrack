@@ -16,7 +16,11 @@
     }
 </script>
 
-<form method="post" action="?/add_intake" class="grid grid-cols-3 gap-4 p-4 bg-slate-300 rounded-xl">
+<form
+    method="post"
+    action="?/add_intake"
+    class="grid grid-cols-3 gap-4 rounded-xl bg-slate-300 p-4"
+>
     <label class="col-span-1" for="title">What did you eat?</label>
     <input class="col-span-2" type="text" name="title" />
     <label class="col-span-1" for="amount">How much did you eat?</label>

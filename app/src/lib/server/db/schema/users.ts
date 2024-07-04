@@ -1,7 +1,7 @@
-import { pgEnum, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import { boolean, pgEnum, serial, text, timestamp } from 'drizzle-orm/pg-core';
 import { createTable } from './helpers';
 
-export const colorScheme = pgEnum('user_color_scheme', ['system', 'light', 'dark']);
+export const userStateEnum = pgEnum('user_state', ['active', 'deleted']);
 
 export const users = createTable('user', {
     id: text('id')
@@ -11,5 +11,6 @@ export const users = createTable('user', {
     email: text('email').notNull(),
     emailVerified: timestamp('email_verified', { mode: 'date' }),
     image: text('image'),
-    colorScheme: colorScheme('color_scheme').notNull().default('system'),
+    state: userStateEnum('state').notNull().default('active'),
+    isAdmin: boolean('is_admin').notNull().default(false),
 });

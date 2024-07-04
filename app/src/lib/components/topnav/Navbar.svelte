@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { page } from '$app/stores';
     import { Logo, ThemeToggle } from '$lib/components';
     import { signIn } from '@auth/sveltekit/client';
+    export let isSignedIn: boolean;
 </script>
 
 <nav
@@ -22,7 +22,7 @@
     <!-- End of row -->
     <div class="flex flex-row gap-2 overflow-y-visible border-l px-2 dark:border-slate-300/10">
         <ThemeToggle />
-        {#if !$page.data.session}
+        {#if !isSignedIn}
             <button on:click={() => signIn()}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

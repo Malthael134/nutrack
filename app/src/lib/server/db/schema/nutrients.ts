@@ -1,8 +1,8 @@
-import { serial, text } from "drizzle-orm/pg-core";
-import { createTable } from "./helpers";
+import { serial, varchar } from 'drizzle-orm/pg-core';
+import { createTable, measurementType } from './helpers';
 
 export const nutrients = createTable('nutrient', {
     id: serial('id').primaryKey().notNull(),
-    title: text('title').notNull(),
-    unit: text('unit').notNull()
-})
+    name: varchar('name', { length: 50 }).notNull(),
+    measurementType: measurementType('measurement_type').notNull(),
+});

@@ -29,6 +29,6 @@
     });
 </script>
 
-<span id="page-wrapper" class="{$UserSettingsStore.colorScheme} font-sans text-balance">
+<span id="page-wrapper" class="{$UserSettingsStore.colorScheme} text-balance font-sans">
     <slot />
 </span>

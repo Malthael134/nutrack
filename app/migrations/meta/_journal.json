@@ -1,0 +1,27 @@
+{
+    "version": "7",
+    "dialect": "postgresql",
+    "entries": [
+        {
+            "idx": 0,
+            "version": "7",
+            "when": 1720090695495,
+            "tag": "0000_striped_lord_hawal",
+            "breakpoints": true
+        },
+        {
+            "idx": 1,
+            "version": "7",
+            "when": 1720092610821,
+            "tag": "0001_rainy_doctor_faustus",
+            "breakpoints": true
+        },
+        {
+            "idx": 2,
+            "version": "7",
+            "when": 1720092803523,
+            "tag": "0002_magenta_master_mold",
+            "breakpoints": true
+        }
+    ]
+}
